@@ -11,4 +11,12 @@ describe('<GuessCount/>', ()  => {
     const shallowGuessCount = shallow(<GuessCount/>);
 
   });
+  
+
+  it ('Renders the right count', () => {
+
+    const shallowGuessCount = shallow(<GuessCount dispatch={jest.fn()} count={3}/>);
+    expect(shallowGuessCount.find('span#count').text()).toBe("3");
+    
+  });
 });

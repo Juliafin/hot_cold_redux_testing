@@ -5,13 +5,18 @@ import GuessForm from './guess-form';
 
 import './guess-section.css';
 
-export function GuessSection(props) {
+export class GuessSection extends React.Component {
+
+  render() {
     return (
-        <section>
-            <h2 id="feedback">{props.feedback}</h2>
-            <GuessForm />
-        </section>
-    );
+      <section>
+          <h2 id="feedback">{this.props.feedback}</h2>
+          <GuessForm />
+      </section>
+  );
+
+  }
+    
 }
 
 const mapStateToProps = state => ({
